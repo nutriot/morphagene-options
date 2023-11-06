@@ -1,0 +1,10 @@
+{
+  "ignore": [
+		".husky/*",
+		"tests/*",
+		"tsup.config.ts"
+	],
+  "ignoreBinaries": [
+		"lint-staged"
+	]
+}
