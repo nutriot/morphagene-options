@@ -2,8 +2,6 @@
 
 > Helper for editing Morphagene `options.txt` files
 
-[![Code Coverage](https://img.shields.io/codecov/c/github/nutriot/morphagene-options?style=for-the-badge)](https://codecov.io/gh/nutriot/morphagene-options)
-
 [![License](https://img.shields.io/github/license/nutriot/morphagene-options?color=blue&style=for-the-badge)](https://github.com/nutriot/morphagene-options/blob/main/LICENSE)
 [![Version](https://img.shields.io/npm/v/@nutriot/morphagene-options?style=for-the-badge)](https://www.npmjs.org/package/@nutriot/morphagene-options)
 [![Build](https://img.shields.io/github/actions/workflow/status/nutriot/morphagene-options/default.yml?style=for-the-badge)](https://github.com/nutriot/morphagene-options/actions)
