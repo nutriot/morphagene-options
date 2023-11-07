@@ -1,6 +1,6 @@
 # @nutriot/morphagene-options
 
-> Helper for editing Morphagene `options.txt` files
+> Helper for editing [Morphagene](https://www.makenoisemusic.com/modules/morphagene) `options.txt` files
 
 [![License](https://img.shields.io/github/license/nutriot/morphagene-options?color=blue&style=for-the-badge)](https://github.com/nutriot/morphagene-options/blob/main/LICENSE)
 [![Version](https://img.shields.io/npm/v/@nutriot/morphagene-options?style=for-the-badge)](https://www.npmjs.org/package/@nutriot/morphagene-options)
