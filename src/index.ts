@@ -7,7 +7,7 @@ import { type MorphageneOptions, validate, validOptions } from './schema';
  * @param {boolean} strict - validates the input
  * @returns {MorphageneOptions}
  */
-export function parse(input: string, strict = true) {
+export function parse(input: string, strict = true): MorphageneOptions {
 	const configLines: MorphageneOptions = {};
 
 	let foundHeader = false;
@@ -62,7 +62,7 @@ export function parse(input: string, strict = true) {
  * @param {MorphageneOptions} input - Morphagene options object
  * @returns {string}
  */
-export function stringify(input: MorphageneOptions, strict = true) {
+export function stringify(input: MorphageneOptions, strict = true): string {
 	if (strict) {
 		validate(input);
 	}
