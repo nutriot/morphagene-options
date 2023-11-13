@@ -9,6 +9,10 @@
     "LICENSE",
     "README.md"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nutriot/morphagene-options.git"
+  },
   "engines": {
     "node": ">=18.0.0"
   },
