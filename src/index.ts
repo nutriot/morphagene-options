@@ -1,5 +1,9 @@
 import { type MorphageneOptions, validate, validOptions } from './schema';
 
+const roundNumber = new Intl.NumberFormat('en-US', {
+	minimumFractionDigits: 5, maximumFractionDigits: 5
+});
+
 /**
  * Parses an `options.txt` file into a JavaScript object.
  *
@@ -75,10 +79,18 @@ export function stringify(input: MorphageneOptions, strict = true): string {
 	const output = [
 		...Object.entries(sortedInput)
 			.map(([key, value]) => {
-				return key === '_'
-					? value
-					: `${key} ${value}`
-				;
+				switch (key) {
+					case '_':
+						return value;
+
+					case 'mcr1':
+					case 'mcr2':
+					case 'mcr3':
+						return `${key} ${roundNumber.format(Number(value))}`;
+
+					default:
+						return `${key} ${value}`;
+				}
 			})
 	];
 
