@@ -1,17 +1,17 @@
 {
   "name": "@nutriot/morphagene-options",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Helper for editing Morphagene `options.txt` files",
   "exports": "./dist/index.mjs",
   "types": "./dist",
-	"files": [
-		"dist",
-		"LICENSE",
-		"README.md"
-	],
-	"engines": {
-		"node": ">=18.0.0"
-	},
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch",
@@ -24,11 +24,11 @@
     "test": "uvu --require tsm tests --ignore shared.ts"
   },
   "keywords": [
-		"morphagene",
-		"make noise",
-		"modular",
-		"modular synthesizers"
-	],
+    "morphagene",
+    "make noise",
+    "modular",
+    "modular synthesizers"
+  ],
   "license": "MIT",
   "dependencies": {
     "zod": "^3.22.4"
