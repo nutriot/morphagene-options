@@ -40,4 +40,5 @@ export const validOptions: MorphageneValues[] = [
 ];
 
 type MorphageneValues = 'ckop' | 'cvop' | 'gnsm' | 'inop' | 'mcr1' | 'mcr2' | 'mcr3' | 'omod' | 'pmin' | 'pmod' | 'rsop' | 'vsop';
+
 export type MorphageneOptions = z.infer<typeof schema>;
