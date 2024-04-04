@@ -1,6 +1,6 @@
 {
   "name": "@nutriot/morphagene-options",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Helper for editing Morphagene `options.txt` files",
   "exports": {
     ".": "./dist/index.js",
