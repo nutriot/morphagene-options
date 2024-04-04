@@ -28,7 +28,7 @@
     "lint:ts": "eslint ./src --ignore-path .gitignore",
     "lint": "npm-run-all --parallel lint:*",
     "prepack": "npm run build",
-    "prepare": "husky install",
+    "prepare": "husky",
     "test": "uvu --require tsm tests --ignore shared.ts"
   },
   "keywords": [
