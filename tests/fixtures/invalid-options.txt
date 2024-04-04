@@ -1,0 +1,10 @@
+6 46345 0
+vsop 666
+inop 666
+pmin 666
+omod 666
+gnsm 666
+rsop 666
+pmod 666
+ckop 666
+cvop 666
