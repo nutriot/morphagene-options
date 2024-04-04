@@ -34,7 +34,7 @@ Stringifies a JavaScript object into an options string
 
 ### `parseFile`
 
-:warning: This function is only available in NodeJS environments
+:warning: This function is only available in NodeJS
 
 Parses an `options.txt` file into a JavaScript object.
 
@@ -42,7 +42,7 @@ Usage: `await parseFile('options.txt', strict = true)`
 
 ### `parseFileSync`
 
-:warning: This function is only available in NodeJS environments
+:warning: This function is only available in NodeJS
 
 Usage: `parseFileSync('options.txt', strict = true)`
 
