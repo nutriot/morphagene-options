@@ -1,6 +1,7 @@
 {
   "ignore": [
 		".husky/*",
+		"src/*",
 		"tests/*",
 		"tsup.config.ts"
 	],
