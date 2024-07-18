@@ -23,9 +23,8 @@
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch",
+    "lint:code": "eslint **/*.json **/*.ts --no-warn-ignored",
     "lint:deps": "knip --production",
-    "lint:json": "eslint ./*.json --ignore-path .gitignore",
-    "lint:ts": "eslint ./src --ignore-path .gitignore",
     "lint": "npm-run-all --parallel lint:*",
     "prepack": "npm run build",
     "prepare": "husky",
@@ -42,20 +41,26 @@
     "@types/node": "^18.19.41",
     "@typescript-eslint/eslint-plugin": "^7.16.1",
     "@typescript-eslint/parser": "^7.16.1",
-    "eslint": "^8.57.0",
-    "eslint-plugin-json": "^3.1.0",
+    "eslint": "^9.7.0",
+    "eslint-plugin-jsonc": "^2.16.0",
+    "eslint-plugin-unicorn": "^54.0.0",
     "husky": "^9.1.1",
     "knip": "^5.26.0",
     "lint-staged": "^15.2.7",
     "npm-run-all2": "^6.2.2",
+    "prettier": "^3.3.3",
     "tsm": "^2.3.0",
     "tsup": "^8.1.2",
     "typescript": "^5.5.3",
+    "typescript-eslint": "^7.16.1",
     "uvu": "^0.5.6",
     "valibot": "^0.36.0"
   },
   "lint-staged": {
-    "*.(json|ts)": "eslint --cache --fix"
+		"*.ts": [
+			"eslint --cache --fix",
+			"prettier --cache --write"
+		]
   },
   "packageManager": "pnpm@8.15.6+sha256.01c01eeb990e379b31ef19c03e9d06a14afa5250b82e81303f88721c99ff2e6f"
 }
