@@ -18,6 +18,9 @@ import { parse, stringify } from '@nutriot/morphagene-options';
 
 // NodeJS only
 import { parseFile, parseFileSync } from '@nutriot/morphagene-options/fs';
+
+// helpers
+import { schema, type MorphageneOptions } from '@nutriot/morphagene-options';
 ```
 
 ### `parse`
