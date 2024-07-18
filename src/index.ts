@@ -97,4 +97,4 @@ export function stringify(input: MorphageneOptions, strict = true): string {
 	return output.join('\n');
 }
 
-export { schema } from './schema';
+export { schema, type MorphageneOptions } from './schema';

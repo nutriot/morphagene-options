@@ -4,11 +4,6 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-dependencies:
-  zod:
-    specifier: ^3.22.4
-    version: 3.22.4
-
 devDependencies:
   '@types/node':
     specifier: ^18.19.29
@@ -49,6 +44,9 @@ devDependencies:
   uvu:
     specifier: ^0.5.6
     version: 0.5.6
+  valibot:
+    specifier: ^0.36.0
+    version: 0.36.0
 
 packages:
 
@@ -3331,6 +3329,10 @@ packages:
       sade: 1.8.1
     dev: true
 
+  /valibot@0.36.0:
+    resolution: {integrity: sha512-CjF1XN4sUce8sBK9TixrDqFM7RwNkuXdJu174/AwmQUB62QbCQADg5lLe8ldBalFgtj1uKj+pKwDJiNo4Mn+eQ==}
+    dev: true
+
   /validate-npm-package-license@3.0.4:
     resolution: {integrity: sha512-DpKm2Ui/xN7/HQKCtpZxoRWBhZ9Z0kqtygG8XCgNQ8ZlDnxuQmWhj566j8fN4Cu3/JmbhsDo7fcAJq4s9h27Ew==}
     dependencies:
@@ -3487,3 +3489,4 @@ packages:
 
   /zod@3.22.4:
     resolution: {integrity: sha512-iC+8Io04lddc+mVqQ9AZ7OQ2MrUKGN+oIQyq1vemgt46jwCwLfhq7/pwnBnNXXXZb8VTVLKwp9EDkx+ryxIWmg==}
+    dev: true
