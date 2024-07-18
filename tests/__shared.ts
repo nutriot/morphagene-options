@@ -43,7 +43,7 @@ cvop 0 //CV out: 0 envelope follow, 1 ramp gene
 		rsop: 0,
 		pmod: 0,
 		ckop: 0,
-		cvop: 0
+		cvop: 0,
 	},
 
 	strippedString: `
@@ -82,6 +82,6 @@ cvop 666
 		rsop: 666,
 		pmod: 666,
 		ckop: 666,
-		cvop: 666
+		cvop: 666,
 	},
 };

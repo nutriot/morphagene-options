@@ -32,7 +32,7 @@ test('parseFileSync valid options', () => {
 	assert.equal(actual, expected);
 });
 
-test('parseFileSync indented options',() => {
+test('parseFileSync indented options', () => {
 	const actual = parseFileSync(`${cwd}/indented-options.txt`);
 	const expected = options.validObject;
 

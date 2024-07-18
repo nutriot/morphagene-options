@@ -1,7 +1,8 @@
 import { type MorphageneOptions, validate, validOptions } from './schema';
 
 const roundNumber = new Intl.NumberFormat('en-US', {
-	minimumFractionDigits: 5, maximumFractionDigits: 5
+	minimumFractionDigits: 5,
+	maximumFractionDigits: 5,
 });
 
 /**
@@ -17,9 +18,9 @@ export function parse(input: string, strict = true): MorphageneOptions {
 	let foundHeader = false;
 
 	input
-		.replace(/\/\/.*$/mg, '')
+		.replace(/\/\/.*$/gm, '')
 		.split('\n')
-		.map(line => {
+		.map((line) => {
 			const trimmedLine = line.trim();
 
 			if (!trimmedLine.length) {
@@ -29,13 +30,13 @@ export function parse(input: string, strict = true): MorphageneOptions {
 			if (!foundHeader) {
 				const lineValues = trimmedLine.split(' ');
 
-				if (lineValues.length === 3 && lineValues.some(value => !Number.isInteger(value))) {
+				if (lineValues.length === 3 && lineValues.some((value) => !Number.isInteger(value))) {
 					configLines['_'] = trimmedLine;
 					foundHeader = true;
 				}
 			}
 
-			const isValid = validOptions.some(option => {
+			const isValid = validOptions.some((option) => {
 				return trimmedLine.startsWith(option);
 			});
 
@@ -54,7 +55,7 @@ export function parse(input: string, strict = true): MorphageneOptions {
 
 	// Make the `_` property read-only
 	Object.defineProperty(configLines, '_', {
-		writable: false
+		writable: false,
 	});
 
 	return configLines;
@@ -73,25 +74,24 @@ export function stringify(input: MorphageneOptions, strict = true): string {
 
 	const sortedInput = {
 		_: input['_'],
-		...input
+		...input,
 	};
 
 	const output = [
-		...Object.entries(sortedInput)
-			.map(([key, value]) => {
-				switch (key) {
-					case '_':
-						return value;
+		...Object.entries(sortedInput).map(([key, value]) => {
+			switch (key) {
+				case '_':
+					return value;
 
-					case 'mcr1':
-					case 'mcr2':
-					case 'mcr3':
-						return `${key} ${roundNumber.format(Number(value))}`;
+				case 'mcr1':
+				case 'mcr2':
+				case 'mcr3':
+					return `${key} ${roundNumber.format(Number(value))}`;
 
-					default:
-						return `${key} ${value}`;
-				}
-			})
+				default:
+					return `${key} ${value}`;
+			}
+		}),
 	];
 
 	return output.join('\n');

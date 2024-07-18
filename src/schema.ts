@@ -34,7 +34,7 @@ export const schema = object({
 
 export const validate = (inputSchema) => {
 	parse(schema, inputSchema);
-}
+};
 
 export const validOptions: MorphageneValues[] = [
 	'ckop',
@@ -48,9 +48,21 @@ export const validOptions: MorphageneValues[] = [
 	'pmin',
 	'pmod',
 	'rsop',
-	'vsop'
+	'vsop',
 ];
 
-type MorphageneValues = 'ckop' | 'cvop' | 'gnsm' | 'inop' | 'mcr1' | 'mcr2' | 'mcr3' | 'omod' | 'pmin' | 'pmod' | 'rsop' | 'vsop';
+type MorphageneValues =
+	| 'ckop'
+	| 'cvop'
+	| 'gnsm'
+	| 'inop'
+	| 'mcr1'
+	| 'mcr2'
+	| 'mcr3'
+	| 'omod'
+	| 'pmin'
+	| 'pmod'
+	| 'rsop'
+	| 'vsop';
 
 export type MorphageneOptions = InferOutput<typeof schema>;
