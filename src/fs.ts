@@ -1,7 +1,7 @@
 import { parse } from './';
 import { readFile } from 'node:fs/promises';
 import { readFileSync } from 'node:fs';
-import { type MorphageneOptions } from './schema';
+import { type MorphageneOptions } from './schema/valibot';
 
 /**
  * Parses an `options.txt` file into a JavaScript object.

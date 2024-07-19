@@ -1,4 +1,4 @@
-import { type MorphageneOptions, validate, validOptions } from './schema';
+import { type MorphageneOptions, validate, validOptions } from './schema/valibot';
 
 const roundNumber = new Intl.NumberFormat('en-US', {
 	minimumFractionDigits: 5,
@@ -97,4 +97,5 @@ export function stringify(input: MorphageneOptions, strict = true): string {
 	return output.join('\n');
 }
 
-export { schema, type MorphageneOptions } from './schema';
+export { schema as valibotSchema, type MorphageneOptions } from './schema/valibot';
+export { schema as zodSchema } from './schema/zod';

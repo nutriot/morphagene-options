@@ -20,7 +20,7 @@ import { parse, stringify } from '@nutriot/morphagene-options';
 import { parseFile, parseFileSync } from '@nutriot/morphagene-options/fs';
 
 // helpers
-import { schema, type MorphageneOptions } from '@nutriot/morphagene-options';
+import { valibotSchema, zodSchema, type MorphageneOptions } from '@nutriot/morphagene-options';
 ```
 
 ### `parse`
