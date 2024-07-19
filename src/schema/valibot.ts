@@ -32,6 +32,10 @@ export const schema = object({
 	mcr3: optional(CHORD_RATIO),
 });
 
+/**
+ * Validates a provided object against the Valibot schema
+ * @param inputSchema
+ */
 export const validate = (inputSchema: MorphageneOptions) => {
 	parse(schema, inputSchema);
 };
