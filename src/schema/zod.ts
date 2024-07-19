@@ -19,5 +19,3 @@ export const schema = z.object({
 	mcr2: CHORD_RATIO.optional(),
 	mcr3: CHORD_RATIO.optional(),
 });
-
-export type MorphageneOptions = z.infer<typeof schema>;
