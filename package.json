@@ -28,6 +28,8 @@
     "lint": "npm-run-all --parallel lint:*",
     "prepack": "npm run build",
     "prepare": "husky",
+    "publish:npm": "np --no-yarn",
+    "publish:jsr": "deno publish",
     "test": "uvu --require tsm tests --ignore shared.ts"
   },
   "keywords": [
@@ -47,6 +49,7 @@
     "husky": "^9.1.1",
     "knip": "^5.26.0",
     "lint-staged": "^15.2.7",
+    "np": "^10.0.7",
     "npm-run-all2": "^6.2.2",
     "prettier": "^3.3.3",
     "tsm": "^2.3.0",
