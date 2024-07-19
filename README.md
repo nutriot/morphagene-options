@@ -3,8 +3,10 @@
 > Helper for editing [Morphagene](https://www.makenoisemusic.com/modules/morphagene) `options.txt` files
 
 [![License](https://img.shields.io/github/license/nutriot/morphagene-options?color=blue&style=for-the-badge)](https://github.com/nutriot/morphagene-options/blob/main/LICENSE)
-[![Version](https://img.shields.io/npm/v/@nutriot/morphagene-options?style=for-the-badge)](https://www.npmjs.org/package/@nutriot/morphagene-options)
-[![Build](https://img.shields.io/github/actions/workflow/status/nutriot/morphagene-options/default.yml?style=for-the-badge)](https://github.com/nutriot/morphagene-options/actions)
+[![Version: npm](https://img.shields.io/npm/v/@nutriot/morphagene-options?style=for-the-badge)](https://www.npmjs.org/package/@nutriot/morphagene-options)
+[![Version: jsr](https://img.shields.io/jsr/v/@nutriot/morphagene-options?style=for-the-badge)](https://jsr.io/@nutriot/morphagene-options)
+[![Build: NodeJS](https://img.shields.io/github/actions/workflow/status/nutriot/morphagene-options/node.yml?logo=nodedotjs&logoColor=white&style=for-the-badge)](https://github.com/nutriot/morphagene-options/actions)
+[![Build: Deno](https://img.shields.io/github/actions/workflow/status/nutriot/morphagene-options/deno.yml?logo=deno&logoColor=white&style=for-the-badge)](https://github.com/nutriot/morphagene-options/actions)
 
 ## Installation
 
