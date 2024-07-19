@@ -19,7 +19,7 @@ import { parse, stringify, type MorphageneOptions } from '@nutriot/morphagene-op
 // NodeJS only
 import { parseFile, parseFileSync } from '@nutriot/morphagene-options/fs';
 
-// Schemas for Valibot and Zod
+// Bonus: schemas for Valibot and Zod
 import { valibotSchema, zodSchema } from '@nutriot/morphagene-options';
 ```
 
