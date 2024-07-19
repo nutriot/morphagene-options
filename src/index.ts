@@ -1,4 +1,4 @@
-import { type MorphageneOptions, validate, validOptions } from './schema/valibot';
+import { type MorphageneOptions, type MorphageneValues, validate, validOptions } from './schema/valibot';
 
 const roundNumber = new Intl.NumberFormat('en-US', {
 	minimumFractionDigits: 5,
@@ -20,7 +20,7 @@ export function parse(input: string, strict = true): MorphageneOptions {
 	input
 		.replace(/\/\/.*$/gm, '')
 		.split('\n')
-		.map((line) => {
+		.map((line: string) => {
 			const trimmedLine = line.trim();
 
 			if (!trimmedLine.length) {
@@ -46,7 +46,7 @@ export function parse(input: string, strict = true): MorphageneOptions {
 
 			const [key, value] = trimmedLine.split(' ');
 
-			configLines[key] = Number(value);
+			configLines[key as MorphageneValues] = Number(value);
 		});
 
 	if (strict) {

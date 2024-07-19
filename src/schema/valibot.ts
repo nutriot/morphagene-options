@@ -32,7 +32,7 @@ export const schema = object({
 	mcr3: optional(CHORD_RATIO),
 });
 
-export const validate = (inputSchema) => {
+export const validate = (inputSchema: MorphageneOptions) => {
 	parse(schema, inputSchema);
 };
 
@@ -51,7 +51,7 @@ export const validOptions: MorphageneValues[] = [
 	'vsop',
 ];
 
-type MorphageneValues =
+export type MorphageneValues =
 	| 'ckop'
 	| 'cvop'
 	| 'gnsm'

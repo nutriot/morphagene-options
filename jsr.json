@@ -7,7 +7,7 @@
 	},
 	"publish": {
 		"include": [
-			"./src/*",
+			"./src/**/*",
 			"./types/*",
 			"jsr.json",
 			"LICENSE",
