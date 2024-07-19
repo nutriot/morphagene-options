@@ -2,6 +2,7 @@ import { options } from './__shared.js';
 import { resolve } from 'node:path';
 import { test } from 'uvu';
 import * as assert from 'uvu/assert';
+import process from 'node:process';
 
 import { parseFile, parseFileSync } from '../src/fs.js';
 
