@@ -11,6 +11,18 @@ const roundNumber = new Intl.NumberFormat('en-US', {
  * @param {string} input - contents of `options.txt`
  * @param {boolean} strict - validates the input
  * @returns {MorphageneOptions}
+ *
+ * @example
+ * ```ts
+ * import { parse } from '@nutriot/morphagene-options'
+ *
+ * parse(`
+ * 	6 46345 0
+ * 	vsop 0
+ * 	inop 0
+ * 	pmin 0
+ * `)
+ * ```
  */
 export function parse(input: string, strict = true): MorphageneOptions {
 	const configLines: MorphageneOptions = {};
@@ -66,6 +78,18 @@ export function parse(input: string, strict = true): MorphageneOptions {
  *
  * @param {MorphageneOptions} input - Morphagene options object
  * @returns {string}
+ *
+ * @example
+ * ```ts
+ * import { stringify } from '@nutriot/morphagene-options'
+ *
+ * stringify({
+ * 	_: '6 46345 0',
+ * 	vsop: 0,
+ * 	inop: 0,
+ * 	pmin: 0,
+ * })
+ * ```
  */
 export function stringify(input: MorphageneOptions, strict = true): string {
 	if (strict) {

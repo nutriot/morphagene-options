@@ -9,6 +9,13 @@ import { type MorphageneOptions } from './schema/valibot';
  * @param {string} filePath - the file path to `options.txt`
  * @param {boolean} strict - validates the input
  * @returns {Promise<MorphageneOptions>}
+ *
+ * @example
+ * ```ts
+ * import { parseFile } from '@nutriot/morphagene-options/fs'
+ *
+ * parseFile('path/to/options.txt')
+ * ```
  */
 export async function parseFile(filePath: string, strict = true): Promise<MorphageneOptions> {
 	const input = await readFile(filePath, 'utf-8');
@@ -22,6 +29,13 @@ export async function parseFile(filePath: string, strict = true): Promise<Morpha
  * @param {string} filePath - the file path to `options.txt`
  * @param {boolean} strict - validates the input
  * @returns {MorphageneOptions}
+ *
+ * @example
+ * ```ts
+ * import { parseFileSync } from '@nutriot/morphagene-options/fs'
+ *
+ * parseFile('path/to/options.txt')
+ * ```
  */
 export function parseFileSync(filePath: string, strict = true): MorphageneOptions {
 	const input = readFileSync(filePath, 'utf-8');
