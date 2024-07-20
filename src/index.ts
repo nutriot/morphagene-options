@@ -1,3 +1,8 @@
+/**
+ * This module contains functions to parse and stringify Morphagene options.
+ * @module
+ */
+
 import { type MorphageneOptions, type MorphageneValues, validate, validOptions } from './schema/valibot';
 
 const roundNumber = new Intl.NumberFormat('en-US', {

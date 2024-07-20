@@ -1,3 +1,8 @@
+/**
+ * This module contains functions to parse Morphagene options files.
+ * @module
+ */
+
 import { parse } from './';
 import { readFile } from 'node:fs/promises';
 import { readFileSync } from 'node:fs';
