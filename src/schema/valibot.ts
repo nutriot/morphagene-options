@@ -10,6 +10,15 @@ import {
 	pipe,
 	readonly,
 	string,
+	type IntegerAction,
+	type MaxValueAction,
+	type MinValueAction,
+	type NumberSchema,
+	type ObjectSchema,
+	type OptionalSchema,
+	type ReadonlyAction,
+	type SchemaWithPipe,
+	type StringSchema,
 } from 'valibot';
 
 const RANGE_0_TO_1 = pipe(number(), integer(), minValue(0), maxValue(1));
@@ -32,20 +41,20 @@ const CHORD_RATIO = pipe(number(), minValue(-16), maxValue(16));
  * })
  * ```
  */
-export const schema = object({
+export const schema: ValibotSchema = object({
 	_: optional(pipe(string(), readonly())),
-	vsop: optional(RANGE_0_TO_2),
-	inop: optional(RANGE_0_TO_2),
-	pmin: optional(RANGE_0_TO_2),
-	omod: optional(RANGE_0_TO_1),
-	gnsm: optional(RANGE_0_TO_1),
-	rsop: optional(RANGE_0_TO_1),
-	pmod: optional(RANGE_0_TO_2),
 	ckop: optional(RANGE_0_TO_2),
 	cvop: optional(RANGE_0_TO_1),
+	gnsm: optional(RANGE_0_TO_1),
+	inop: optional(RANGE_0_TO_2),
 	mcr1: optional(CHORD_RATIO),
 	mcr2: optional(CHORD_RATIO),
 	mcr3: optional(CHORD_RATIO),
+	omod: optional(RANGE_0_TO_1),
+	pmin: optional(RANGE_0_TO_2),
+	pmod: optional(RANGE_0_TO_2),
+	rsop: optional(RANGE_0_TO_1),
+	vsop: optional(RANGE_0_TO_2),
 });
 
 /**
@@ -94,3 +103,131 @@ export type MorphageneValues =
  * ```
  */
 export type MorphageneOptions = InferOutput<typeof schema>;
+
+// Prevent slow types
+type ValibotSchema = ObjectSchema<
+	{
+		readonly _: OptionalSchema<SchemaWithPipe<[StringSchema<undefined>, ReadonlyAction<string>]>, never>;
+
+		ckop: OptionalSchema<
+			SchemaWithPipe<
+				[
+					NumberSchema<undefined>,
+					IntegerAction<number, undefined>,
+					MinValueAction<number, 0, undefined>,
+					MaxValueAction<number, 2, undefined>,
+				]
+			>,
+			never
+		>;
+		inop: OptionalSchema<
+			SchemaWithPipe<
+				[
+					NumberSchema<undefined>,
+					IntegerAction<number, undefined>,
+					MinValueAction<number, 0, undefined>,
+					MaxValueAction<number, 2, undefined>,
+				]
+			>,
+			never
+		>;
+		pmin: OptionalSchema<
+			SchemaWithPipe<
+				[
+					NumberSchema<undefined>,
+					IntegerAction<number, undefined>,
+					MinValueAction<number, 0, undefined>,
+					MaxValueAction<number, 2, undefined>,
+				]
+			>,
+			never
+		>;
+		pmod: OptionalSchema<
+			SchemaWithPipe<
+				[
+					NumberSchema<undefined>,
+					IntegerAction<number, undefined>,
+					MinValueAction<number, 0, undefined>,
+					MaxValueAction<number, 2, undefined>,
+				]
+			>,
+			never
+		>;
+		vsop: OptionalSchema<
+			SchemaWithPipe<
+				[
+					NumberSchema<undefined>,
+					IntegerAction<number, undefined>,
+					MinValueAction<number, 0, undefined>,
+					MaxValueAction<number, 2, undefined>,
+				]
+			>,
+			never
+		>;
+
+		cvop: OptionalSchema<
+			SchemaWithPipe<
+				[
+					NumberSchema<undefined>,
+					IntegerAction<number, undefined>,
+					MinValueAction<number, 0, undefined>,
+					MaxValueAction<number, 1, undefined>,
+				]
+			>,
+			never
+		>;
+		gnsm: OptionalSchema<
+			SchemaWithPipe<
+				[
+					NumberSchema<undefined>,
+					IntegerAction<number, undefined>,
+					MinValueAction<number, 0, undefined>,
+					MaxValueAction<number, 1, undefined>,
+				]
+			>,
+			never
+		>;
+		omod: OptionalSchema<
+			SchemaWithPipe<
+				[
+					NumberSchema<undefined>,
+					IntegerAction<number, undefined>,
+					MinValueAction<number, 0, undefined>,
+					MaxValueAction<number, 1, undefined>,
+				]
+			>,
+			never
+		>;
+		rsop: OptionalSchema<
+			SchemaWithPipe<
+				[
+					NumberSchema<undefined>,
+					IntegerAction<number, undefined>,
+					MinValueAction<number, 0, undefined>,
+					MaxValueAction<number, 1, undefined>,
+				]
+			>,
+			never
+		>;
+
+		mcr1: OptionalSchema<
+			SchemaWithPipe<
+				[NumberSchema<undefined>, MinValueAction<number, -16, undefined>, MaxValueAction<number, 16, undefined>]
+			>,
+			never
+		>;
+		mcr2: OptionalSchema<
+			SchemaWithPipe<
+				[NumberSchema<undefined>, MinValueAction<number, -16, undefined>, MaxValueAction<number, 16, undefined>]
+			>,
+			never
+		>;
+		mcr3: OptionalSchema<
+			SchemaWithPipe<
+				[NumberSchema<undefined>, MinValueAction<number, -16, undefined>, MaxValueAction<number, 16, undefined>]
+			>,
+			never
+		>;
+	},
+	undefined
+>;
