@@ -16,6 +16,22 @@ const RANGE_0_TO_1 = pipe(number(), integer(), minValue(0), maxValue(1));
 const RANGE_0_TO_2 = pipe(number(), integer(), minValue(0), maxValue(2));
 const CHORD_RATIO = pipe(number(), minValue(-16), maxValue(16));
 
+/**
+ * Valibot schema for all supported Morphagene options.
+ *
+ * @example
+ * ```ts
+ * import { safeParse } as v from 'valibot'
+ * import { valibotSchema as schema } from '@nutriot/morphagene-options'
+ *
+ * safeParse(schema, {
+ * 	_: '6 46345 0',
+ * 	vsop: 0,
+ * 	inop: 0,
+ * 	pmin: 0,
+ * })
+ * ```
+ */
 export const schema = object({
 	_: optional(pipe(string(), readonly())),
 	vsop: optional(RANGE_0_TO_2),
@@ -33,7 +49,7 @@ export const schema = object({
 });
 
 /**
- * Validates a provided object against the Valibot schema
+ * Validates a provided object against the Valibot schema.
  * @param inputSchema
  */
 export const validate = (inputSchema: MorphageneOptions) => {
@@ -69,4 +85,12 @@ export type MorphageneValues =
 	| 'rsop'
 	| 'vsop';
 
+/**
+ * Morphagene options object.
+ *
+ * @example
+ * ```ts
+ * import { type MorphageneOptions } from '@nutriot/morphagene-options'
+ * ```
+ */
 export type MorphageneOptions = InferOutput<typeof schema>;

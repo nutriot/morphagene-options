@@ -16,13 +16,13 @@
 
 ```ts
 // all environments
-import { parse, stringify, type MorphageneOptions } from '@nutriot/morphagene-options';
+import { parse, stringify, type MorphageneOptions } from '@nutriot/morphagene-options'
 
 // NodeJS only
-import { parseFile, parseFileSync } from '@nutriot/morphagene-options/fs';
+import { parseFile, parseFileSync } from '@nutriot/morphagene-options/fs'
 
 // Bonus: schemas for Valibot and Zod
-import { valibotSchema, zodSchema } from '@nutriot/morphagene-options';
+import { valibotSchema, zodSchema } from '@nutriot/morphagene-options'
 ```
 
 ### `parse`
