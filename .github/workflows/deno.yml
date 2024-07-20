@@ -51,7 +51,7 @@ jobs:
             ${{ runner.os }}-deno-store-
 
     - name: Lint Source
-      run: deno lint --rules-exclude=no-explicit-any --ignore=node_modules **/*.ts
+      run: deno lint --ignore=node_modules **/*.ts
 
     - name: Run Tests
       run: deno run --allow-all --unstable-sloppy-imports npm:uvu tests
