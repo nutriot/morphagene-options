@@ -1,8 +1,8 @@
-import { options } from './__shared.js';
+import { options } from './__shared.ts';
 import { test } from 'uvu';
 import * as assert from 'uvu/assert';
 
-import { parse } from '../src/index.js';
+import { parse } from '../src/index.ts';
 
 test('parse valid options', () => {
 	const actual = parse(options.validString);

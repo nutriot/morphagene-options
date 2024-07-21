@@ -1,8 +1,8 @@
-import { options } from './__shared.js';
+import { options } from './__shared.ts';
 import { test } from 'uvu';
 import * as assert from 'uvu/assert';
 
-import { stringify } from '../src/index.js';
+import { stringify } from '../src/index.ts';
 
 test('stringify valid options', () => {
 	const actual = stringify(options.validObject);
