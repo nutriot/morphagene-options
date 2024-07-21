@@ -31,9 +31,8 @@
 		"declaration": true,
 		"outDir": "dist",
 
-
 		/**
-		* Custom
+		* Custom Rules
 		**/
 		"allowImportingTsExtensions": true,
 		"noEmit": true
