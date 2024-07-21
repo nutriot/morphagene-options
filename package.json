@@ -29,7 +29,7 @@
     "prepack": "npm run build",
     "prepare": "husky",
     "publish:npm": "np --no-yarn",
-    "publish:jsr": "deno publish --unstable-sloppy-imports",
+    "publish:jsr": "deno publish",
     "test": "uvu --require tsm tests --ignore shared.ts"
   },
   "keywords": [
