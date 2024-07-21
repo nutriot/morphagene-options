@@ -3,10 +3,10 @@
  * @module
  */
 
-import { parse } from './';
+import { parse } from './index.ts';
 import { readFile } from 'node:fs/promises';
 import { readFileSync } from 'node:fs';
-import { type MorphageneOptions } from './schema/valibot';
+import { type MorphageneOptions } from './schema/valibot.ts';
 
 /**
  * Parses an `options.txt` file into a JavaScript object.

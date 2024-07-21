@@ -3,7 +3,7 @@
  * @module
  */
 
-import { type MorphageneOptions, type MorphageneValues, validate, validOptions } from './schema/valibot';
+import { type MorphageneOptions, type MorphageneValues, validate, validOptions } from './schema/valibot.ts';
 
 const roundNumber = new Intl.NumberFormat('en-US', {
 	minimumFractionDigits: 5,
@@ -126,5 +126,5 @@ export function stringify(input: MorphageneOptions, strict = true): string {
 	return output.join('\n');
 }
 
-export { schema as valibotSchema, type MorphageneOptions } from './schema/valibot';
-export { schema as zodSchema } from './schema/zod';
+export { schema as valibotSchema, type MorphageneOptions } from './schema/valibot.ts';
+export { schema as zodSchema } from './schema/zod.ts';

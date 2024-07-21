@@ -29,7 +29,14 @@
     "allowJs": true,
     "checkJs": true,
     "declaration": true,
-    "outDir": "dist"
+    "outDir": "dist",
+
+
+		/**
+		 * Custom
+		 **/
+		"allowImportingTsExtensions": true,
+		"noEmit": true
   },
   /**
    * Use global.d.ts instead of compilerOptions.types
