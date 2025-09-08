@@ -25,21 +25,21 @@ import { parseFile } from '@nutriot/morphagene-options/fs'
 import { valibotSchema, zodSchema } from '@nutriot/morphagene-options'
 ```
 
-### API ⚙️
+## API ⚙️
 
-#### `parse`
+### `parse`
 
 Usage: `parse(optionsString, strict = true)`
 
 Parses an options string into a JavaScript object.
 
-#### `stringify`
+### `stringify`
 
 Usage: `stringify(optionsObject, strict = true)`
 
 Stringifies a JavaScript object into an options string
 
-#### `parseFile`
+### `parseFile`
 
 > [!CAUTION]
 > The following methods do not work in the browser
