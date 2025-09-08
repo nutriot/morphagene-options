@@ -39,21 +39,19 @@ Usage: `stringify(optionsObject, strict = true)`
 
 Stringifies a JavaScript object into an options string
 
-#### `parseFile.async`
+#### `parseFile`
 
-:warning: This function is only available in NodeJS
-
-Parses an `options.txt` file into a JavaScript object.
-
-Usage: `await parseFile.async('options.txt', strict = true)`
-
-#### `parseFile.sync`
-
-:warning: This function is only available in NodeJS
-
-Usage: `parseFile.sync('options.txt', strict = true)`
+> [!CAUTION]
+> These functions are only available in NodeJS
 
 Parses an `options.txt` file into a JavaScript object.
+
+Usage:
+
+```ts
+parseFile.sync('options.txt', strict = true)
+await parseFile.async('options.txt', strict = true)
+```
 
 ## License ©️
 
