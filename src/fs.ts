@@ -39,7 +39,7 @@ export async function parseFile(filePath: string, strict = true): Promise<Morpha
  * ```ts
  * import { parseFileSync } from '@nutriot/morphagene-options/fs'
  *
- * parseFile('path/to/options.txt')
+ * parseFileSync('path/to/options.txt')
  * ```
  */
 export function parseFileSync(filePath: string, strict = true): MorphageneOptions {
