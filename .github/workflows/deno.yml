@@ -50,6 +50,9 @@ jobs:
         restore-keys: |
             ${{ runner.os }}-deno-store-
 
+    - name: Install Dependencies
+      run: deno install
+
     - name: Lint Source
       run: deno lint --ignore=node_modules **/*.ts
 
