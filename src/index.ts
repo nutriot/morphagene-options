@@ -13,9 +13,9 @@ const roundNumber = new Intl.NumberFormat('en-US', {
 /**
  * Parses an `options.txt` string into a JavaScript object.
  *
- * @param {string} input - contents of `options.txt`
- * @param {boolean} strict - validates the input
- * @returns {MorphageneOptions}
+ * @param input - contents of `options.txt`
+ * @param strict - validates the input
+ * @returns an object of options
  *
  * @example
  * ```ts
@@ -82,8 +82,8 @@ export function parse(input: string, strict = true): MorphageneOptions {
 /**
  * Stringifies a JavaScript object into an `options.txt` string
  *
- * @param {MorphageneOptions} input - Morphagene options object
- * @returns {string}
+ * @param input - Morphagene options object
+ * @returns the contents of `options.txt`
  *
  * @example
  * ```ts
@@ -127,5 +127,5 @@ export function stringify(input: MorphageneOptions, strict = true): string {
 	return output.join('\n');
 }
 
-export { type MorphageneOptions, schema as valibotSchema } from './schema/valibot.ts';
+export { schema as valibotSchema } from './schema/valibot.ts';
 export { schema as zodSchema } from './schema/zod.ts';
