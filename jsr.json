@@ -6,12 +6,6 @@
 		"./fs": "./src/fs.ts"
 	},
 	"publish": {
-		"include": [
-			"./src/**/*",
-			"./types/*",
-			"jsr.json",
-			"LICENSE",
-			"README.md"
-		]
+		"include": ["./src/**/*", "./types/*", "jsr.json", "LICENSE", "README.md"]
 	}
 }

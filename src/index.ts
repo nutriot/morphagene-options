@@ -37,6 +37,7 @@ export function parse(input: string, strict = true): MorphageneOptions {
 	input
 		.replace(/\/\/.*$/gm, '')
 		.split('\n')
+		// biome-ignore lint/suspicious/useIterableCallbackReturn: will do later
 		.map((line: string) => {
 			const trimmedLine = line.trim();
 
@@ -48,7 +49,7 @@ export function parse(input: string, strict = true): MorphageneOptions {
 				const lineValues = trimmedLine.split(' ');
 
 				if (lineValues.length === 3 && lineValues.some((value) => !Number.isInteger(value))) {
-					configLines['_'] = trimmedLine;
+					configLines._ = trimmedLine;
 					foundHeader = true;
 				}
 			}
@@ -102,7 +103,7 @@ export function stringify(input: MorphageneOptions, strict = true): string {
 	}
 
 	const sortedInput = {
-		_: input['_'],
+		_: input._,
 		...input,
 	};
 
@@ -126,5 +127,5 @@ export function stringify(input: MorphageneOptions, strict = true): string {
 	return output.join('\n');
 }
 
-export { schema as valibotSchema, type MorphageneOptions } from './schema/valibot.ts';
+export { type MorphageneOptions, schema as valibotSchema } from './schema/valibot.ts';
 export { schema as zodSchema } from './schema/zod.ts';

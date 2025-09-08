@@ -18,16 +18,16 @@
     "url": "https://github.com/nutriot/morphagene-options.git"
   },
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=20.0.0"
   },
   "scripts": {
-    "build": "tsup",
-    "dev": "tsup --watch",
-    "lint:code": "eslint **/*.json **/*.ts --no-warn-ignored",
+    "build": "tsdown",
+    "dev": "tsdown --watch",
+    "lint:code": "biome check --no-errors-on-unmatched --vcs-enabled=true --vcs-use-ignore-file=true",
     "lint:deps": "knip --production",
     "lint": "npm-run-all --parallel lint:*",
     "prepack": "npm run build",
-    "prepare": "husky",
+    "prepare": "lefthook install",
     "publish:npm": "np --no-yarn",
     "publish:jsr": "deno publish",
     "test": "uvu --require tsm tests --ignore shared.ts"
@@ -40,31 +40,22 @@
   ],
   "license": "MIT",
   "devDependencies": {
+    "@biomejs/biome": "^2.2.3",
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
     "@types/node": "^18.19.41",
-    "@typescript-eslint/eslint-plugin": "^7.16.1",
-    "@typescript-eslint/parser": "^7.16.1",
-    "eslint": "^9.7.0",
-    "eslint-plugin-jsonc": "^2.16.0",
-    "eslint-plugin-unicorn": "^54.0.0",
-    "husky": "^9.1.1",
     "knip": "^5.26.0",
-    "lint-staged": "^15.2.7",
+    "lefthook": "^1.12.4",
     "np": "^10.0.7",
     "npm-run-all2": "^6.2.2",
     "prettier": "^3.3.3",
+    "tsdown": "^0.14.2",
     "tsm": "^2.3.0",
     "tsup": "^8.2.1",
     "typescript": "^5.5.3",
-    "typescript-eslint": "^7.16.1",
     "uvu": "^0.5.6",
     "valibot": "^0.36.0",
     "zod": "^3.23.8"
-  },
-  "lint-staged": {
-    "*.ts": [
-      "eslint --cache --fix",
-      "prettier --cache --write"
-    ]
   },
   "packageManager": "pnpm@9.5.0+sha512.140036830124618d624a2187b50d04289d5a087f326c9edfc0ccd733d76c4f52c3a313d4fc148794a2a9d81553016004e6742e8cf850670268a7387fc220c903"
 }
