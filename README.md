@@ -8,36 +8,38 @@
 [![Build: NodeJS](https://img.shields.io/github/actions/workflow/status/nutriot/morphagene-options/node.yml?logo=nodedotjs&logoColor=white&style=for-the-badge)](https://github.com/nutriot/morphagene-options/actions)
 [![Build: Deno](https://img.shields.io/github/actions/workflow/status/nutriot/morphagene-options/deno.yml?logo=deno&logoColor=white&style=for-the-badge)](https://github.com/nutriot/morphagene-options/actions)
 
-## Installation
+## Installation 💿
 
 `npm install --save @nutriot/morphagene-options`
 
-## Usage
+## Usage 🚀
 
 ```ts
 // all environments
 import { parse, stringify, type MorphageneOptions } from '@nutriot/morphagene-options'
 
 // NodeJS only
-import { parseFile, parseFileSync } from '@nutriot/morphagene-options/fs'
+import { parseFile } from '@nutriot/morphagene-options/fs'
 
 // Bonus: schemas for Valibot and Zod
 import { valibotSchema, zodSchema } from '@nutriot/morphagene-options'
 ```
 
-### `parse`
+### API ⚙️
+
+#### `parse`
 
 Usage: `parse(optionsString, strict = true)`
 
 Parses an options string into a JavaScript object.
 
-### `stringify`
+#### `stringify`
 
 Usage: `stringify(optionsObject, strict = true)`
 
 Stringifies a JavaScript object into an options string
 
-### `parseFile.async`
+#### `parseFile.async`
 
 :warning: This function is only available in NodeJS
 
@@ -45,7 +47,7 @@ Parses an `options.txt` file into a JavaScript object.
 
 Usage: `await parseFile.async('options.txt', strict = true)`
 
-### `parseFile`
+#### `parseFile.sync`
 
 :warning: This function is only available in NodeJS
 
@@ -53,6 +55,6 @@ Usage: `parseFile.sync('options.txt', strict = true)`
 
 Parses an `options.txt` file into a JavaScript object.
 
-## License
+## License ©️
 
 This work is licensed under [The MIT License](https://opensource.org/licenses/MIT).
