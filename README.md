@@ -42,7 +42,7 @@ Stringifies a JavaScript object into an options string
 #### `parseFile`
 
 > [!CAUTION]
-> These functions are only available in NodeJS
+> These functions do not work in the browser
 
 Parses an `options.txt` file into a JavaScript object.
 
