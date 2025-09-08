@@ -17,8 +17,8 @@ const _readFile = quansync({
 /**
  * Parses an `options.txt` file into a JavaScript object.
  *
- * @param {string} filePath - the file path to `options.txt`
- * @param {boolean} strict - validates the input
+ * @param filePath - the file path to `options.txt`
+ * @param strict - validates the input
  * @returns an object of options
  *
  * @example
