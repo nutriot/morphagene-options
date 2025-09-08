@@ -9,12 +9,6 @@ import { quansync } from 'quansync';
 import { parse } from './index.ts';
 import type { MorphageneOptions } from './schema/valibot.ts';
 
-// export async function parseFile(filePath: string, strict = true): Promise<MorphageneOptions> {
-// 	const input = await readFile(filePath, 'utf-8');
-
-// 	return parse(input, strict);
-// }
-
 const _readFile = quansync({
 	sync: (path: string) => readFileSync(path, 'utf-8'),
 	async: (path: string) => readFile(path, 'utf-8'),
