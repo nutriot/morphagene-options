@@ -5,8 +5,8 @@ on:
     branches:
     - 'main'
     paths:
-    - '.github/**'
-    - '.eslintrc.cjs'
+    - '.github/workflows/bun.yml'
+    - 'biome.jsonc'
     - 'package.json'
     - 'pnpm-lock.yaml'
     - 'src/**'
@@ -15,8 +15,8 @@ on:
     branches:
     - 'main'
     paths:
-    - '.github/**'
-    - '.eslintrc.cjs'
+    - '.github/workflows/bun.yml'
+    - 'biome.jsonc'
     - 'package.json'
     - 'pnpm-lock.yaml'
     - 'src/**'
