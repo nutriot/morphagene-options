@@ -4,44 +4,44 @@ import { test } from 'uvu';
 import * as assert from 'uvu/assert';
 import process from 'node:process';
 
-import { parseFile, parseFileSync } from '../src/fs.ts';
+import { parseFile } from '../src/fs.ts';
 
 const cwd = resolve(process.cwd(), 'tests/fixtures');
 
-test('parseFile valid options', async () => {
-	const actual = await parseFile(`${cwd}/valid-options.txt`);
+test('parseFile.async valid options', async () => {
+	const actual = await parseFile.async(`${cwd}/valid-options.txt`);
 	const expected = options.validObject;
 
 	assert.equal(actual, expected);
 });
 
-test('parseFile indented options', async () => {
-	const actual = await parseFile(`${cwd}/indented-options.txt`);
+test('parseFile.async indented options', async () => {
+	const actual = await parseFile.async(`${cwd}/indented-options.txt`);
 	const expected = options.validObject;
 
 	assert.equal(actual, expected);
 });
 
-// test('parseFile invalid options', () => {
-// 	assert.throws(async () => await parseFile(`${cwd}/invalid-options.txt`));
+// test('parseFile.async invalid options', () => {
+// 	assert.throws(async () => await parseFile.async(`${cwd}/invalid-options.txt`));
 // });
 
-test('parseFileSync valid options', () => {
-	const actual = parseFileSync(`${cwd}/valid-options.txt`);
+test('parseFile.sync valid options', () => {
+	const actual = parseFile.sync(`${cwd}/valid-options.txt`);
 	const expected = options.validObject;
 
 	assert.equal(actual, expected);
 });
 
-test('parseFileSync indented options', () => {
-	const actual = parseFileSync(`${cwd}/indented-options.txt`);
+test('parseFile.sync indented options', () => {
+	const actual = parseFile.sync(`${cwd}/indented-options.txt`);
 	const expected = options.validObject;
 
 	assert.equal(actual, expected);
 });
 
-// test('parseFileSync invalid options', () => {
-// 	assert.throws(() => parseFileSync(`${cwd}/invalid-options.txt`));
+// test('parseFile.sync invalid options', () => {
+// 	assert.throws(() => parseFile.sync(`${cwd}/invalid-options.txt`));
 // });
 
 test.run();

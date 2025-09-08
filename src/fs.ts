@@ -5,45 +5,38 @@
 
 import { readFileSync } from 'node:fs';
 import { readFile } from 'node:fs/promises';
+import { quansync } from 'quansync';
 import { parse } from './index.ts';
 import type { MorphageneOptions } from './schema/valibot.ts';
+
+// export async function parseFile(filePath: string, strict = true): Promise<MorphageneOptions> {
+// 	const input = await readFile(filePath, 'utf-8');
+
+// 	return parse(input, strict);
+// }
+
+const _readFile = quansync({
+	sync: (path: string) => readFileSync(path, 'utf-8'),
+	async: (path: string) => readFile(path, 'utf-8'),
+});
 
 /**
  * Parses an `options.txt` file into a JavaScript object.
  *
  * @param {string} filePath - the file path to `options.txt`
  * @param {boolean} strict - validates the input
- * @returns {Promise<MorphageneOptions>}
+ * @returns an object of options
  *
  * @example
  * ```ts
  * import { parseFile } from '@nutriot/morphagene-options/fs'
  *
- * parseFile('path/to/options.txt')
+ * parseFile.sync('path/to/options.txt')
+ * await parseFile.async('path/to/options.txt')
  * ```
  */
-export async function parseFile(filePath: string, strict = true): Promise<MorphageneOptions> {
-	const input = await readFile(filePath, 'utf-8');
+export const parseFile = quansync(function* (filename, strict = true): Generator<MorphageneOptions> {
+	const contents = yield* _readFile(filename);
 
-	return parse(input, strict);
-}
-
-/**
- * Parses an `options.txt` file into a JavaScript object.
- *
- * @param {string} filePath - the file path to `options.txt`
- * @param {boolean} strict - validates the input
- * @returns {MorphageneOptions}
- *
- * @example
- * ```ts
- * import { parseFileSync } from '@nutriot/morphagene-options/fs'
- *
- * parseFileSync('path/to/options.txt')
- * ```
- */
-export function parseFileSync(filePath: string, strict = true): MorphageneOptions {
-	const input = readFileSync(filePath, 'utf-8');
-
-	return parse(input, strict);
-}
+	return parse(contents, strict);
+});
