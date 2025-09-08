@@ -37,14 +37,23 @@ jobs:
         fetch-depth: 10
 
     - uses: pnpm/action-setup@v4
-      with:
-        version: 10.15.1
 
     - uses: actions/setup-node@v5
       with:
         node-version: ${{ matrix.node-version }}
-        cache: 'pnpm'
-        cache-dependency-path: 'pnpm-lock.yaml'
+
+    - name: Get pnpm store directory
+      id: pnpm-cache
+      run: |
+        echo "::set-output name=pnpm_store_path::$(pnpm store path)"
+
+    - uses: actions/cache@v4
+      name: Setup pnpm cache
+      with:
+        path: ${{ steps.pnpm-cache.outputs.pnpm_store_path }}
+        key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+        restore-keys: |
+          ${{ runner.os }}-pnpm-store-
 
     - name: Install dependencies
       run: |
