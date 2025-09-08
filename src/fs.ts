@@ -5,7 +5,7 @@
 
 import { readFileSync } from 'node:fs';
 import { readFile } from 'node:fs/promises';
-import { quansync } from 'quansync';
+import { type QuansyncFn, type QuansyncGenerator, quansync } from 'quansync';
 import { parse } from './index.ts';
 import type { MorphageneOptions } from './schema/valibot.ts';
 
@@ -29,7 +29,10 @@ const _readFile = quansync({
  * await parseFile.async('path/to/options.txt')
  * ```
  */
-export const parseFile = quansync(function* (filename, strict = true): Generator<MorphageneOptions> {
+export const parseFile: QuansyncFn<MorphageneOptions, [filename: string, strict?: boolean]> = quansync(function* (
+	filename: string,
+	strict = true,
+): QuansyncGenerator<MorphageneOptions> {
 	const contents = yield* _readFile(filename);
 
 	return parse(contents, strict);
