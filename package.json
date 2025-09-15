@@ -23,7 +23,7 @@
   "scripts": {
     "build": "tsdown",
     "dev": "tsdown --watch",
-    "lint:code": "biome check --no-errors-on-unmatched --vcs-enabled=true --vcs-use-ignore-file=true",
+    "lint:code": "biome check",
     "lint:deps": "knip --production",
     "lint": "npm-run-all --parallel lint:*",
     "prepack": "npm run build",
